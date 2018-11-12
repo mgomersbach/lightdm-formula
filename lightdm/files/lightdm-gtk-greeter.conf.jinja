@@ -1,0 +1,11 @@
+{% from "lightdm/map.jinja" import lightdm with context %}
+# Do not modify, this file is managed from Salt
+
+[greeter]
+{% if (lightdm.config.greeter is defined) -%}
+{% if (lightdm.config.greeter.gtk is defined) and lightdm.config.greeter.gtk -%}
+{% for option, value in lightdm.config.greeter.gtk.items() -%}
+{{ option }}={{ value }}
+{% endfor %}
+{%- endif %}
+{%- endif %}

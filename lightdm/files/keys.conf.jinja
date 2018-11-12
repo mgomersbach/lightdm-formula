@@ -1,0 +1,9 @@
+{% from "lightdm/map.jinja" import lightdm with context %}
+# Do not modify, this file is managed from Salt
+
+[keyring]
+{% if (lightdm.config.authkeys is defined) and lightdm.config.authkeys -%}
+{% for option, value in lightdm.config.authkeys.items() -%}
+{{ option }}={{ value }}
+{% endfor %}
+{%- endif %}

@@ -1,0 +1,26 @@
+lightdm:
+  pkg: 'lightdm'
+  svc: 'lightdm'
+  enable_service: True
+  gtkgreeterpkg: 'lightdm-gtk-greeter'
+  qtgreeterpkg: 'lightdm-qt-greeter'
+  configfile: '/etc/lightdm/lightdm.conf'
+  configfile_keys: '/etc/lightdm/keys.conf'
+  configfile_users: '/etc/lightdm/users.conf'
+  configfile_gtk: '/etc/lightdm/lightdm-gtk-greeter.conf'
+  configfile_qt: '/etc/lightdm/lightdm-qt-greeter.conf'
+  config:
+    general:
+      start-default-seat: 'true'
+      greeter-session: 'lightdm-gtk-greeter'
+    xdmcpserver:
+      enabled: 'false'
+    vncserver:
+      enabled: 'false'
+    users:
+      hidden-users: 'nobody nobody4 noaccess'
+      minimum-uid: 1000
+      hidden-shells: '/bin/false /usr/sbin/nologin'
+    greeter:
+      gtk:
+        theme-name: 'Adwaita-dark'

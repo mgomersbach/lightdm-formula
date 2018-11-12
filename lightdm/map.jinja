@@ -1,0 +1,24 @@
+{% import_yaml 'lightdm/defaults.yaml' as default_settings %}
+{% import_yaml 'lightdm/osfamilymap.yaml' as os_family_map %}
+{% import_yaml 'lightdm/osmap.yaml' as os_map %}
+
+{% set osfam = salt['grains.filter_by'](
+    os_family_map,
+    grain='os_family',
+    ) or {}
+%}
+{% set os = salt['grains.filter_by'](
+    os_map,
+    grain='os',
+    ) or {}
+%}
+
+{% do salt['defaults.merge'](default_settings['lightdm'], osfam) %}
+{% do salt['defaults.merge'](default_settings['lightdm'], os) %}
+
+{% set lightdm = salt['pillar.get'](
+    'lightdm',
+    default=default_settings['lightdm'],
+    merge=True,
+    )
+%}

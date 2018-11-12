@@ -1,0 +1,9 @@
+{% from "lightdm/map.jinja" import lightdm with context %}
+# Do not modify, this file is managed from Salt
+
+[UserList]
+{% if (lightdm.config.users is defined) and lightdm.config.users -%}
+{% for option, value in lightdm.config.users.items() -%}
+{{ option }}={{ value }}
+{% endfor %}
+{%- endif %}

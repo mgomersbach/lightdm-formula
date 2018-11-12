@@ -1,0 +1,19 @@
+Gentoo:
+  pkg: 'x11-misc/lightdm'
+  svc: 'xdm'
+  gtkgreeterpkg: 'x11-misc/lightdm-gtk-greeter'
+  config:
+    seat:
+      session-wrapper: '/etc/lightdm/Xsession'
+    greeter:
+      gtk:
+        theme-name: 'NumixSolarizedDark'
+    user:
+      hidden-users: 'nobody noaccess'
+RedHat:
+  gtkgreeterpkg: 'lightdm-gtk'
+  qtgreeterpkg: 'lightdm-qt'
+  config:
+    greeter:
+      gtk:
+        background: '/usr/share/backgrounds/default.png'

@@ -1,0 +1,124 @@
+lightdm:
+  config:
+    general:
+      #start-default-seat: true
+      #greeter-user: lightdm
+      #minimum-display-number: 0
+      #minimum-vt: 7
+      #lock-memory: true
+      #user-authority-in-system-dir: false
+      #guest-account-script: guest-account
+      #logind-check-graphical: false
+      #log-directory: /var/log/lightdm
+      #run-directory: /var/run/lightdm
+      #cache-directory: '/var/cache/lightdm'
+      #sessions-directory: /usr/share/lightdm/sessions:/usr/share/xsessions:/usr/share/wayland-sessions
+      #remote-sessions-directory: /usr/share/lightdm/remote-sessions
+      #greeters-directory: /usr/share/lightdm/greeters:/usr/share/xgreeters
+      #backup-logs: true
+    seat:
+      #type: xlocal
+      #pam-service: lightdm
+      #pam-autologin-service: lightdm-autologin
+      #pam-greeter-service: lightdm-greeter
+      #xserver-command: X
+      #xmir-command: Xmir
+      #xserver-config:
+      #xserver-layout:
+      #xserver-allow-tcp: false
+      #xserver-share: true
+      #xserver-hostname:
+      #xserver-display-number:
+      #xdmcp-manager:
+      #xdmcp-port: 177
+      #xdmcp-key:
+      #unity-compositor-command: unity-system-compositor
+      #unity-compositor-timeout: 60
+      #greeter-session: example-gtk-gnome
+      #greeter-hide-users: false
+      #greeter-allow-guest: true
+      #greeter-show-manual-login: false
+      #greeter-show-remote-login: true
+      #user-session: default
+      #allow-user-switching: true
+      #allow-guest: true
+      #guest-session:
+      session-wrapper: '/etc/lightdm/Xsession'
+      #greeter-wrapper:
+      #guest-wrapper:
+      #display-setup-script:
+      #display-stopped-script:
+      #greeter-setup-script:
+      #session-setup-script:
+      #session-cleanup-script:
+      #autologin-guest: false
+      #autologin-user:
+      #autologin-user-timeout: 0
+      #autologin-in-background: false
+      #autologin-session:
+      #exit-on-failure: false
+    xdmcpserver:
+      enabled: 'false'
+      #port: 177
+      #listen-address:
+      #key:
+      #hostname:
+    vncserver:
+      enabled: 'false'
+      #command: Xvnc
+      #port: 5900
+      #listen-address:
+      #width: 1024
+      #height: 768
+      #depth: 8
+    greeter:
+      gtk:
+        ## GTK+ theme to use
+        #theme-name:
+        ## Icon theme to use
+        #icon-theme-name: 
+        ## Cursor theme to use
+        #cursor-theme-name: 
+        ## Cursor size to use
+        #cursor-theme-size:
+        ## Background file to use, either an image path or a color (e.g. #772953) 
+        #background: 
+        ## false|true ("true" by default)  Display user background (if available)
+        #user-background: 
+        ## Length of time (in milliseconds) to transition between background images ("500" by default)
+        #transition-duration:
+        ## Font to use 
+        #font-name: 
+        ## false|true  Whether to antialias Xft fonts
+        #xft-antialias:
+        ## Resolution for Xft in dots per inch (e.g. 96) 
+        #xft-dpi: 
+        ## none|slight|medium|hintfull  What degree of hinting to use
+        #xft-hintstyle:
+        ## none|rgb|bgr|vrgb|vbgr  Type of subpixel antialiasing 
+        #xft-rgba: 
+        ## Monitor to display greeter window (name or number). Use #cursor value to display greeter at monitor with cursor. Can be a semicolon separated list
+        #active-monitor:
+        ## x y ("50% 50%" by default)  Login window position
+        #position:
+        ## Image used as default user icon, path or #icon-name
+        #default-user-image:
+        ## false|true ("false" by default)
+        #hide-user-image:
+        #panel-position: top|bottom ("top" by default)
+        #clock-format: strftime-format string, e.g. %H:%M
+        #indicators: semi-colon ";" separated list of allowed indicator modules. Built-in indicators include "~a11y", "~language", "~session", "~power", "~clock", "~host", "~spacer". Unity indicators can be represented by short name (e.g. "sound", "power"), service file name, or absolute path
+        #a11y-states: states of accessibility features: "name" - save state on exit, "-name" - disabled at start (default value for unlisted), "+name" - enabled at start. Allowed names: contrast, font, keyboard, reader.
+        #keyboard: command to launch on-screen keyboard (e.g. "onboard")
+        #keyboard-position: x y[;width height] ("50%,center -0;50% 25%" by default)  Works only for "onboard"
+        #reader: command to launch screen reader (e.g. "orca")
+        #at-spi-enabled: false|true ("true" by default) Enables accessibility at-spi-command if the greeter is built with it enabled
+        #allow-debugging: false|true ("false" by default)
+        #screensaver-timeout: Timeout (in seconds) until the screen blanks when the greeter is called as lockscreen
+    users:
+      minimum-uid: 1000
+      hidden-users: nobody nobody4 noaccess
+      hidden-shells: /bin/false /usr/sbin/nologin
+    keys:
+      a: '0x0123456789ABCD'
+      #b: secret

@@ -1,0 +1,30 @@
+{% from "lightdm/map.jinja" import lightdm with context %}
+# Do not modify, this file is managed from Salt
+
+[LightDM]
+{% if (lightdm.config.general is defined) and lightdm.config.general -%}
+{% for option, value in lightdm.config.general.items() -%}
+{{ option }}={{ value }}
+{% endfor %}
+{%- endif %}
+
+[Seat:*]
+{% if (lightdm.config.seat is defined) and lightdm.config.seat -%}
+{% for option, value in lightdm.config.seat.items() -%}
+{{ option }}={{ value }}
+{% endfor %}
+{%- endif %}
+
+[XDMCPServer]
+{% if (lightdm.config.xdmcpserver is defined) and lightdm.config.xdmcpserver -%}
+{% for option, value in lightdm.config.xdmcpserver.items() -%}
+{{ option }}={{ value }}
+{% endfor %}
+{%- endif %}
+
+[VNCServer]
+{% if (lightdm.config.vncserver is defined) and lightdm.config.vncserver -%}
+{% for option, value in lightdm.config.vncserver.items() -%}
+{{ option }}={{ value }}
+{% endfor %}
+{%- endif %}
