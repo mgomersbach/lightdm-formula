@@ -15,4 +15,4 @@ install:
   - sudo salt-call grains.items --local
 
 script:
-  - sudo salt-call state.show_highstate --local --retcode-passthrough
+  - sudo salt-call state.show_highstate -l debug  --local --retcode-passthrough
