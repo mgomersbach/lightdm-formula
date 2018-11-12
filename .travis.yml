@@ -12,7 +12,6 @@ install:
   - sudo cp .travis/minion /etc/salt/minion
   - sudo service salt-minion restart
 
-  - sudo cat /var/log/salt/*
   - sudo salt-call grains.items --local
 
 script:
